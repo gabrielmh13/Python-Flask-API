@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        div {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            text-align: center;
+	        vertical-align: middle;
+        }
+        thead th {
+            width: 25%;
+            background-color: #333;
+            color: white;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>{{admin}}</h1>
+        <table>
+            <thead>
+                 <tr>
+                     <th>
+                         ID
+                     </th>
+                     <th>
+                         Username
+                     </th>
+                     <th>
+                         Password
+                     </th>
+                     <th>
+                         Name
+                     </th>
+                     <th>
+                         E-mail
+                     </th>
+                 </tr>
+            </thead>
+     
+             <tbody>
+                 {%for user in users%}
+                     <tr>
+                         <td>
+                             {{user.id}}
+                         </td>
+                         <td>
+                             {{user.username}}
+                         </td>
+                         <td>
+                             {{user.password}}
+                         </td>
+                         <td>
+                             {{user.name}}
+                         </td>
+                         <td>
+                             {{user.email}}
+                         </td>
+                     </tr>
+                 {%endfor%}
+             </tbody>
+         </table>
+    </div>
+</body>
+</html>
